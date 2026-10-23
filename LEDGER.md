@@ -7,3 +7,4 @@ Append-only record of what was added, edited, corrected, reviewed, deleted or pu
 | 2026-10-08 | Added | Priority Nexus LLC website | b6f4dfdae740 | commit | b172c43432041aa1 |
 | 2026-10-08 | Edited | Match page background to logo | 2a73bf65dbed | commit | d12296fc8988ce07 |
 | 2026-10-08 | Edited | Present the whole portfolio: verifiable trust across fields | 62e01b4260ae | commit | e676b48f38a5a146 |
+| 2026-10-23 | Added | PRIGH Sky: link in the navigation and a project card | 064a4f098960 | https://prioritynexusllc.github.io/PRIGH-Sky/ (work in progress) | 9da5fa72fd625b54 |
