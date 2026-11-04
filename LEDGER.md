@@ -29,3 +29,4 @@ Append-only record of what was added, edited, corrected, reviewed, deleted or pu
 | 2026-11-01 | Edited | Contact: prighthesky@gmail.com | f599219bb9f2 | commit | 3aa96809333d9c18 |
 | 2026-11-02 | Edited | SCR-01 card: middleware that enforces boundaries for humans and AI | cbb9f3cb6860 | commit | d27d667bd42cdb86 |
 | 2026-11-02 | Edited | Contact: main address plus the PRIGH address | 8bf7c50a0c1f | commit | 188e3331fd32f46c |
+| 2026-11-04 | Edited | Main page rewritten in plain words: what we do, how, one blunt card per project (Josie 2026-11-04) | af253b7aeb0a | commit | 72df2f0ed0e66b39 |
