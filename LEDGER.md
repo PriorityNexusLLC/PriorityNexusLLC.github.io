@@ -32,3 +32,4 @@ Append-only record of what was added, edited, corrected, reviewed, deleted or pu
 | 2026-11-04 | Edited | Main page rewritten in plain words: what we do, how, one blunt card per project (Josie 2026-11-04) | af253b7aeb0a | commit | 72df2f0ed0e66b39 |
 | 2026-11-04 | Edited | Main page: intent restated as holding systems accountable for the people, boundaries made visible (draft for Josie) | 505853e0b56f | commit | f1b57e4162582136 |
 | 2026-11-04 | Edited | Menu: Projects plus the external sites only (Josie 2026-11-04) | 52074ee13fa4 | commit | fbde5cdcf8c95283 |
+| 2026-11-04 | Edited | Header in Josie's words: Holding systems accountable. / For the People. (2026-11-04) | 350ae517b084 | commit | a1af2b019a8bc4a4 |
