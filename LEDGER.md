@@ -34,3 +34,4 @@ Append-only record of what was added, edited, corrected, reviewed, deleted or pu
 | 2026-11-04 | Edited | Menu: Projects plus the external sites only (Josie 2026-11-04) | 52074ee13fa4 | commit | fbde5cdcf8c95283 |
 | 2026-11-04 | Edited | Header in Josie's words: Holding systems accountable. / For the People. (2026-11-04) | 350ae517b084 | commit | a1af2b019a8bc4a4 |
 | 2026-11-04 | Edited | Header capitalized; friction sentence under Find the boundary; three cores as questions (Josie 2026-11-04) | 41c8acd82d36 | commit | 4d4c8786c950174b |
+| 2026-11-06 | Edited | PRIGH card: Start here link first (the start page), Open the sky beside it; count 162,895 | f732063cc3cf | commit | b545330e3fa69a17 |
