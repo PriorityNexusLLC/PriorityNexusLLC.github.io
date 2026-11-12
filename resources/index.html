@@ -128,8 +128,9 @@
     var p = D.places[st.value].people[+nm.value], src = D.sources[p.s];
     card.appendChild(el("h3", p.n));
     card.appendChild(el("p", p.o + (p.p ? " · " + p.p : ""), "o"));
-    row("Office", document.createTextNode(p.a || "The state does not print an office address for this person."));
-    if (p.t) { var a = el("a", p.t); a.href = "tel:+1" + p.t.replace(/[^0-9]/g, ""); row("Phone", a); }
+    if (p.h && p.a) { row("Office", document.createTextNode("The state lists no office for this person.")); row("Address the state prints", document.createTextNode(p.a)); }
+    else row("Office", document.createTextNode(p.a || "The state does not print an office address for this person."));
+    if (p.t) { var a = el("a", p.t); a.href = "tel:+1" + p.t.replace(/[^0-9]/g, ""); row(p.h ? "Phone the state prints" : "Phone", a); }
     else row("Phone", document.createTextNode("The state does not print an office phone for this person."));
     var of = (D.offices || {})[p.s];
     if (of) {
