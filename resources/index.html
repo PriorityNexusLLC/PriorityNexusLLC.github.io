@@ -128,9 +128,18 @@
     var p = D.places[st.value].people[+nm.value], src = D.sources[p.s];
     card.appendChild(el("h3", p.n));
     card.appendChild(el("p", p.o + (p.p ? " · " + p.p : ""), "o"));
-    row("Office", p.a ? document.createTextNode(p.a) : document.createTextNode("Not given on the official list. See their page."));
+    row("Office", document.createTextNode(p.a || "The state does not print an office address for this person."));
     if (p.t) { var a = el("a", p.t); a.href = "tel:+1" + p.t.replace(/[^0-9]/g, ""); row("Phone", a); }
-    var w = el("a", "Their official page →"); w.href = p.u; w.target = "_blank"; w.rel = "noopener"; row("More", w);
+    else row("Phone", document.createTextNode("The state does not print an office phone for this person."));
+    var of = (D.offices || {})[p.s];
+    if (of) {
+      var box = el("span"), line = of.office + (of.address ? ", " + of.address : "") + (of.phone ? " · " : "");
+      box.appendChild(document.createTextNode(line));
+      if (of.phone) { var oa = el("a", of.phone); oa.href = "tel:+1" + of.phone.replace(/[^0-9]/g, ""); box.appendChild(oa); }
+      if (of.contact_url) { box.appendChild(document.createTextNode(" · ")); var oc = el("a", "How to reach a member →"); oc.href = of.contact_url; oc.target = "_blank"; oc.rel = "noopener"; box.appendChild(oc); }
+      row("Or through", box);
+    }
+    var w = el("a", "Their official page, with every way the state lists to reach them →"); w.href = p.u; w.target = "_blank"; w.rel = "noopener"; row("More", w);
     var s = el("p", "", "src"); s.appendChild(document.createTextNode("From: " + src[0] + ", read " + D.read + ". "));
     var sl = el("a", "Open the list"); sl.href = src[1]; sl.target = "_blank"; sl.rel = "noopener"; s.appendChild(sl); card.appendChild(s);
     card.hidden = false;
