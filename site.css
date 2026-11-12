@@ -93,3 +93,4 @@ footer .foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-botto
 .concept + .concept { margin-top: 12px; }
 .feature.flip { background: linear-gradient(270deg, rgba(139, 63, 224, .16), rgba(0, 0, 0, 0) 72%); }
 @media (min-width: 821px) { .feature.flip .wrap { flex-direction: row-reverse; } }
+.feature p + p { margin-top: 10px; }
