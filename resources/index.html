@@ -9,7 +9,7 @@
 <meta property="og:description" content="Holding Systems Accountable. For the People. Identity · Transparency · Integrity.">
 <meta property="og:image" content="https://prioritynexusllc.org/pn-logo.png">
 <link rel="icon" href="/pn-logo.png">
-<link rel="stylesheet" href="/site.css?v=9e719d52">
+<link rel="stylesheet" href="/site.css?v=6d9d5cb5">
 </head>
 <body>
 <nav><div class="wrap">
@@ -88,6 +88,46 @@
   </div>
   <p class="sub">Hours and numbers change. If one here is wrong, <a href="/contact/">tell us</a> and we will fix it.</p>
 </div></section>
+<section id="reps"><div class="wrap">
+  <h2>Contact your representatives</h2>
+  <p class="sub">Choose a state, then a name. You get the address and phone of their public office, as the official lists give them.</p>
+  <div class="reps">
+    <label>State or territory<select id="rep-state"><option value="">Choose a state</option></select></label>
+    <label>Name<select id="rep-name" disabled><option value="">Choose a state first</option></select></label>
+  </div>
+  <div class="repcard" id="rep-card" hidden></div>
+  <p class="sub" id="rep-note">This lists the people each state sends to Congress, and the District of Columbia's own officials. Each state's own lawmakers are not in it yet.</p>
+</div></section>
+<script>
+(function () {
+  var st = document.getElementById("rep-state"), nm = document.getElementById("rep-name"), card = document.getElementById("rep-card"), D = null;
+  function el(tag, text, cls) { var e = document.createElement(tag); if (text) e.textContent = text; if (cls) e.className = cls; return e; }
+  function row(k, node) { var d = el("div", "", "r"); d.appendChild(el("span", k, "k")); var v = el("span", "", "v"); v.appendChild(node); d.appendChild(v); card.appendChild(d); }
+  fetch("/resources/reps.json").then(function (r) { return r.json(); }).then(function (j) {
+    D = j;
+    Object.keys(j.places).forEach(function (c) { var o = el("option", j.places[c].name); o.value = c; st.appendChild(o); });
+  }).catch(function () { document.getElementById("rep-note").textContent = "The list could not be loaded. Please try again later."; });
+  st.addEventListener("change", function () {
+    card.hidden = true; nm.innerHTML = "";
+    if (!D || !st.value) { nm.disabled = true; nm.appendChild(el("option", "Choose a state first")); return; }
+    var first = el("option", "Choose a name"); first.value = ""; nm.appendChild(first);
+    D.places[st.value].people.forEach(function (p, i) { var o = el("option", p.n + " (" + p.o + ")"); o.value = i; nm.appendChild(o); });
+    nm.disabled = false;
+  });
+  nm.addEventListener("change", function () {
+    card.innerHTML = ""; if (nm.value === "") { card.hidden = true; return; }
+    var p = D.places[st.value].people[+nm.value], src = D.sources[p.s];
+    card.appendChild(el("h3", p.n));
+    card.appendChild(el("p", p.o + (p.p ? " · " + p.p : ""), "o"));
+    row("Office", p.a ? document.createTextNode(p.a) : document.createTextNode("Not given on the official list. See their page."));
+    if (p.t) { var a = el("a", p.t); a.href = "tel:+1" + p.t.replace(/[^0-9]/g, ""); row("Phone", a); }
+    var w = el("a", "Their official page →"); w.href = p.u; w.target = "_blank"; w.rel = "noopener"; row("More", w);
+    var s = el("p", "", "src"); s.appendChild(document.createTextNode("From: " + src[0] + ", read " + D.read + ". "));
+    var sl = el("a", "Open the list"); sl.href = src[1]; sl.target = "_blank"; sl.rel = "noopener"; s.appendChild(sl); card.appendChild(s);
+    card.hidden = false;
+  });
+})();
+</script>
 <section><div class="wrap">
   <div class="grid">
     <div class="card"><span class="tag">Code</span><h3>Everything is open</h3><p>Every project's code is public, so anyone can run the same thing we ran.</p><a class="more" href="https://github.com/PriorityNexusLLC">GitHub →</a> &nbsp; <a class="more" href="https://github.com/PriorityNexusLLC/PNMaster-Graph">The engine →</a> &nbsp; <a class="more" href="https://github.com/PriorityNexusLLC/PNMaster-Graph/blob/main/docs/concept-paper.md">Concept paper →</a></div>
