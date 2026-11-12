@@ -78,3 +78,15 @@ footer .foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-botto
 .feature h2 { font-size: clamp(20px, 3vw, 26px); margin: 0 0 8px; text-wrap: balance; }
 .feature p { margin: 0; color: var(--muted); max-width: 62ch; }
 .feature .go { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.concepts { border-bottom: 1px solid var(--line); }
+.concepts .wrap { padding-top: 34px; padding-bottom: 38px; }
+.concepts .tag { display: inline-block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--violet); }
+.concepts .sub { margin: 4px 0 18px; color: var(--muted); font-size: 15px; }
+.concept { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; padding: 20px 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; color: var(--ink); }
+.concept:hover { text-decoration: none; border-color: var(--violet); }
+.concept svg { flex: none; width: 44px; height: 44px; stroke: var(--violet); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.concept .txt { flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.concept b { font-size: 18px; }
+.concept .txt span { color: var(--muted); max-width: 70ch; }
+.concept .open { color: var(--violet); white-space: nowrap; }
