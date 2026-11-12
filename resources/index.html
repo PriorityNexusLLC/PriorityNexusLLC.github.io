@@ -96,7 +96,7 @@
     <label>Name<select id="rep-name" disabled><option value="">Choose a state first</option></select></label>
   </div>
   <div class="repcard" id="rep-card" hidden></div>
-  <p class="sub" id="rep-note">This lists the people each state sends to Congress, and the District of Columbia's own officials. Each state's own lawmakers are not in it yet.</p>
+  <p class="sub" id="rep-note">This lists the people each state sends to Congress, the District of Columbia's own officials, and each state's own lawmakers where we have read that state's official list. Choose a state to see which of its lawmakers are in.</p>
 </div></section>
 <script>
 (function () {
@@ -111,8 +111,17 @@
     card.hidden = true; nm.innerHTML = "";
     if (!D || !st.value) { nm.disabled = true; nm.appendChild(el("option", "Choose a state first")); return; }
     var first = el("option", "Choose a name"); first.value = ""; nm.appendChild(first);
-    D.places[st.value].people.forEach(function (p, i) { var o = el("option", p.n + " (" + p.o + ")"); o.value = i; nm.appendChild(o); });
+    var groups = {}, P = D.places[st.value];
+    function grp(p) { return p.s === "senate" || p.s === "house" ? "Congress" : p.s === "dc" ? "District of Columbia" : "State " + p.s.split("-")[2]; }
+    P.people.forEach(function (p, i) {
+      var g = grp(p); if (!groups[g]) { groups[g] = document.createElement("optgroup"); groups[g].label = g; nm.appendChild(groups[g]); }
+      var o = el("option", p.n + " (" + p.o + ")"); o.value = i; groups[g].appendChild(o);
+    });
     nm.disabled = false;
+    var has = P.st || [];
+    document.getElementById("rep-note").textContent = st.value === "DC" ? "The District of Columbia: its Delegate in Congress, the Council, the Mayor and the Attorney General."
+      : has.length ? P.name + ": Congress, and the state " + has.join(" and the state ") + ". " + (has.length < 2 && st.value !== "NE" ? "The state’s other chamber is not in the list yet." : "")
+      : P.name + ": Congress only. This state’s own lawmakers are not in the list yet.";
   });
   nm.addEventListener("change", function () {
     card.innerHTML = ""; if (nm.value === "") { card.hidden = true; return; }
