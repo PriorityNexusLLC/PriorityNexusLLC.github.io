@@ -90,3 +90,4 @@ footer .foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-botto
 .concept b { font-size: 18px; }
 .concept .txt span { color: var(--muted); max-width: 70ch; }
 .concept .open { color: var(--violet); white-space: nowrap; }
+.concept + .concept { margin-top: 12px; }
