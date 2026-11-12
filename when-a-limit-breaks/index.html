@@ -105,12 +105,13 @@ nav.pn .brand { display: flex; align-items: center; gap: 10px; font-weight: 700;
 nav.pn .brand img { width: 30px; height: 30px; border-radius: 6px; }
 nav.pn .links { margin-left: auto; display: flex; gap: 16px; font-size: 14px; white-space: nowrap; }
 nav.pn .links a { color: var(--muted); text-decoration: none; } nav.pn .links a:hover, nav.pn .links a.here { color: var(--fg); }
-@media (max-width: 560px) { nav.pn .links { display: none; } }
+nav.pn .links a { padding: 6px 0; border-bottom: 2px solid transparent; } nav.pn .links a.here { border-bottom-color: var(--accent); }
+@media (max-width: 640px) { nav.pn .brand span { display: none; } nav.pn .links { gap: 14px; } }
 .pnfoot { max-width: 46rem; margin: 0 auto; padding: 0 16px 40px; color: var(--muted); font-size: 14px; }
 </style>
 <nav class="pn"><div class="in">
-  <a class="brand" href="/"><img src="/pn-logo.png" alt="">Priority Nexus LLC</a>
-  <div class="links"><a href="/#projects">Projects</a><a href="/PRIGH-Sky/check/">Accountability&nbsp;Check</a><a href="/PRIGH-Sky/">PRIGH&nbsp;Sky</a><a href="/Assumption-Check-/">Assumption&nbsp;Check</a><a class="here" href="/when-a-limit-breaks/">When&nbsp;a&nbsp;Limit&nbsp;Breaks</a><a href="https://github.com/PriorityNexusLLC">GitHub</a></div>
+  <a class="brand" href="/"><img src="/pn-logo.png" alt=""><span>Priority Nexus LLC</span></a>
+  <div class="links"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/">Projects</a><a class="here" href="/when-a-limit-breaks/">When&nbsp;a&nbsp;Limit&nbsp;Breaks</a><a href="/resources/">Resources</a><a href="/contact/">Contact</a></div>
 </div></nav>
 
 
@@ -322,6 +323,6 @@ $("limits").innerHTML = [
 ].map(t => "<li>" + t + "</li>").join("");
 </script>
 
-<div class="pnfoot">&copy; 2026 Priority Nexus LLC &middot; <i>Prioritizing Boundaries</i> &middot; Found an error? <a href="/#contact">Tell us</a>. Corrections are dated and earlier versions stay available.</div>
+<div class="pnfoot">&copy; 2026 Priority Nexus LLC &middot; <i>Prioritizing Boundaries</i> &middot; Found an error? <a href="/contact/">Tell us</a>. Corrections are dated and earlier versions stay available.</div>
 </body>
 </html>

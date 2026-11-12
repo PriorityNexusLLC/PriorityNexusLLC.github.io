@@ -8,129 +8,51 @@
 <meta property="og:title" content="Priority Nexus LLC">
 <meta property="og:description" content="Holding Systems Accountable. For the People. Identity · Transparency · Integrity.">
 <meta property="og:image" content="https://prioritynexusllc.org/pn-logo.png">
-<link rel="icon" href="pn-logo.png">
-<style>
-  :root {
-    --bg: #000000; --panel: #110e1a; --line: #2a2140; --ink: #ece8f5; --muted: #a79fbd;
-    --violet: #b06cf5; --violet-2: #8b3fe0; --glow: rgba(176, 108, 245, .35);
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  a { color: var(--violet); text-decoration: none; } a:hover { text-decoration: underline; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
-  nav { position: sticky; top: 0; z-index: 5; background: rgba(0, 0, 0, .85); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; align-items: center; gap: 18px; height: 56px; overflow-x: auto; }
-  nav .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .04em; white-space: nowrap; color: var(--ink); }
-  nav .brand img { width: 30px; height: 30px; border-radius: 6px; }
-  nav .links { margin-left: auto; display: flex; gap: 16px; font-size: 14px; white-space: nowrap; }
-  nav .links a { color: var(--muted); } nav .links a:hover { color: var(--ink); }
-  header { text-align: center; padding: 64px 0 40px; }
-  header img { width: min(300px, 70vw); filter: drop-shadow(0 0 32px var(--glow)); }
-  h1 { font-size: clamp(28px, 5vw, 44px); margin: 10px 0 6px; letter-spacing: .02em; }
-  .lead { color: var(--muted); font-size: clamp(16px, 2.4vw, 19px); max-width: 720px; margin: 0 auto; }
-  .cores-line { margin-top: 18px; color: var(--violet); letter-spacing: .18em; font-weight: 600; font-size: 14px; text-transform: uppercase; }
-  section { padding: 44px 0; border-top: 1px solid var(--line); }
-  h2 { font-size: 24px; margin: 0 0 6px; } .sub { color: var(--muted); margin: 0 0 22px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
-  .card:hover { border-color: var(--violet-2); box-shadow: 0 0 0 1px var(--violet-2), 0 0 24px var(--glow); }
-  .card h3 { margin: 0 0 6px; font-size: 18px; } .card p { margin: 0; color: var(--muted); font-size: 15px; }
-  .card .tag { display: inline-block; margin-bottom: 8px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--violet); }
-  .card a.more { display: inline-block; margin-top: 10px; font-size: 14px; font-weight: 600; }
-  .num { font-size: 32px; font-weight: 700; color: var(--violet); line-height: 1; }
-  ul.plain { padding-left: 20px; color: var(--muted); } ul.plain li { margin: 8px 0; } ul.plain b { color: var(--ink); }
-  .card p + p { margin-top: 8px; }
-  ol.steps { padding-left: 20px; color: var(--muted); } ol.steps li { margin: 6px 0; } ol.steps b { color: var(--ink); }
-  .contact { display: flex; flex-wrap: wrap; gap: 14px; }
-  .btn { display: inline-block; padding: 10px 16px; border-radius: 10px; border: 1px solid var(--violet-2); color: var(--ink); background: rgba(139, 63, 224, .18); font-weight: 600; }
-  .btn:hover { text-decoration: none; box-shadow: 0 0 18px var(--glow); }
-  footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--muted); font-size: 14px; }
-  @media (max-width: 560px) { nav .links { display: none; } header { padding-top: 40px; } }
-</style>
+<link rel="icon" href="/pn-logo.png">
+<link rel="stylesheet" href="/site.css">
 </head>
 <body>
 <nav><div class="wrap">
-  <a class="brand" href="#top"><img src="pn-logo.png" alt="">Priority Nexus LLC</a>
-  <div class="links"><a href="#projects">Projects</a><a href="https://prioritynexusllc.org/PRIGH-Sky/check/">Accountability&nbsp;Check</a><a href="https://prioritynexusllc.org/PRIGH-Sky/">PRIGH&nbsp;Sky</a><a href="https://prioritynexusllc.org/Assumption-Check-/">Assumption&nbsp;Check</a><a href="https://prioritynexusllc.org/when-a-limit-breaks/">When&nbsp;a&nbsp;Limit&nbsp;Breaks</a><a href="https://github.com/PriorityNexusLLC">GitHub</a></div>
+  <a class="brand" href="/"><img src="/pn-logo.png" alt=""><span>Priority Nexus LLC</span></a>
+  <div class="links"><a class="here" href="/">Home</a><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/when-a-limit-breaks/">When&nbsp;a&nbsp;Limit&nbsp;Breaks</a><a href="/resources/">Resources</a><a href="/contact/">Contact</a></div>
 </div></nav>
-
-<header id="top"><div class="wrap">
-  <img src="pn-logo.png" alt="Priority Nexus LLC logo: Prioritizing Boundaries">
-  <h1>Holding Systems Accountable.<br>For the People.</h1>
-  <p class="lead">Every system that acts on you draws a line: a law, a company, an AI, a study, a machine. Most of those lines are invisible until you hit one. We make them visible, and we show whether you can push back.</p>
-  <div class="cores-line">Identity · Transparency · Integrity</div>
-</div></header>
-
-<section id="what"><div class="wrap">
-  <h2>What we do</h2>
-  <p class="sub">One method for every system, whatever it is made of.</p>
-  <ul class="plain">
-    <li><b>Find the boundary.</b> Every boundary carries friction. Positive friction releases; negative friction constrains. Where the system says yes and no to a person. What it may do to you, and what you may do back.</li>
-    <li><b>Make it visible.</b> Put the line where anyone can see it, in the system's own words, not ours.</li>
-    <li><b>Never let the system grade itself.</b> A law does not say whether it is fair. An AI does not write its own report card. A study does not confirm its own claim.</li>
-    <li><b>Leave the evidence where anyone can reach it.</b> The filing, the text, the paper, the log. Open the same thing we opened and see the same thing we saw.</li>
-  </ul>
-  <p class="sub" style="margin-top:22px">Three questions, asked of every system.</p>
-  <div class="grid">
-    <div class="card"><div class="num">1</div><h3>Does it protect or exploit identity?</h3><p>A thing is what its own record says it is, not what it looks like or calls itself. No record, no entry.</p></div>
-    <div class="card"><div class="num">2</div><h3>Does it provide transparency?</h3><p>What was done can be seen afterwards without trusting anyone's summary. The method is public and the code is open.</p></div>
-    <div class="card"><div class="num">3</div><h3>Does it hold integrity to the whole?</h3><p>Nothing changes quietly. Corrections are dated and the old version stays.</p></div>
+<header class="hero" id="top">
+  <canvas id="stars" aria-hidden="true"></canvas><div class="horizon"></div>
+  <div class="wrap">
+    <img src="/pn-logo.png" alt="Priority Nexus LLC logo: Prioritizing Boundaries">
+    <h1>Holding Systems Accountable.<br>For the People.</h1>
+    <p class="lead">Every system that acts on you draws a line: a law, a company, an AI, a study, a machine. Most of those lines are invisible until you hit one. We make them visible, and we show whether you can push back.</p>
+    <div class="cores-line">Identity · Transparency · Integrity</div>
+    <div class="go"><a class="btn solid" href="/projects/">See the projects</a><a class="btn" href="/about/">How we work</a></div>
   </div>
-</div></section>
-
-<section id="how"><div class="wrap">
-  <h2>How</h2>
-  <p class="sub"><i>Prioritizing Boundaries</i>: a boundary is not a cage. It is a line you can see, and a door that opens when it should.</p>
-  <ul class="plain">
-    <li><b>Everyone is read alike.</b> A church, a company, an agency, a law, an AI and a paper get the same questions and the same standard.</li>
-    <li><b>The questions are plain.</b> Can you say no? Can you be heard? Can you appeal? Who wrote it? Can an outsider check it? Who answers when it fails?</li>
-    <li><b>Friction is the measure.</b> Pressure with a way out is healthy. A door that should open and does not is the finding.</li>
-    <li><b>A missing answer is an answer.</b> It is said plainly, never filled in with something close.</li>
-    <li><b>Written as it happens.</b> Every change is logged, so rewriting history shows.</li>
-    <li><b>For people, not against anyone.</b> The evidence speaks. The page never accuses. Anyone named may respond, and the response is posted in full.</li>
-  </ul>
-</div></section>
-
-<section id="projects"><div class="wrap">
-  <h2>Projects</h2>
-  <p class="sub">Each one puts the same method on a different kind of system.</p>
-  <div class="grid">
-    <div class="card"><span class="tag">Rules</span><h3>Accountability Check</h3><p>Put a rule through nine questions: can you say no, can you be heard, can you appeal, who wrote it, can an outsider check it, who answers when it fails.</p><p>Already read: 79,816 federal and state laws (twenty states), the rulebooks of twenty-three religious and other bodies, card agreements, nonprofit governance answers, withheld contract terms and agency records reports. Rules for children, the elderly, the disabled and immigrants are gathered with a line on who may speak for the person. Paste your own rule and it is read the same way.</p><a class="more" href="https://prioritynexusllc.org/PRIGH-Sky/check/">Open the check →</a></div>
-    <div class="card"><span class="tag">Who is tied to whom</span><h3>PRIGH: the sky</h3><p>162,895 organizations and people in public life, from filings only: boards, owners, lobbying, PAC money, government posts. Click a name and the records under every link are listed.</p><p>Three pictures: the sky, the flows of money and people between ten fields, and the loops where a company lobbied a bill, a member introduced it, and the company's PAC paid that member. A Balance page counts shared boards, single points and long tenures against published standards.</p><a class="more" href="https://prioritynexusllc.org/PRIGH-Sky/">Start here →</a> &nbsp; <a class="more" href="https://prioritynexusllc.org/PRIGH-Sky/sky.html">Open the sky →</a> &nbsp; <a class="more" href="https://github.com/PriorityNexusLLC/PRIGH-Sky">Code →</a></div>
-    <div class="card"><span class="tag">Science</span><h3>Assumption Check</h3><p>A scientific claim, the measurement under it, how far the checking has gone, and the one test that would settle it. Popular and peer-reviewed count for nothing on their own.</p><a class="more" href="https://prioritynexusllc.org/Assumption-Check-/">Open the registry →</a> &nbsp; <a class="more" href="https://github.com/PriorityNexusLLC/Assumption-Check-">Code →</a></div>
-    <div class="card"><span class="tag">Science</span><h3>When a Limit Breaks</h3><p>We read 1,223 sciences and wrote down what each one's own sources say happens when a limit is crossed. The same 21 things kept happening.</p><p>The face is plain words. Each science's own terms, its equation and a published source sit in drop-downs. Wikipedia is not used as a source. What we could not find is said.</p><a class="more" href="https://prioritynexusllc.org/when-a-limit-breaks/">Open the page →</a></div>
-    <div class="card"><span class="tag">AI</span><h3>SCR-01 Protocol</h3><p>Software that sits between a person and an AI. It keeps a record of what the AI did that the AI cannot rewrite, and treats crossing a boundary as a measured event. Open, with tests for admitting ignorance, holding firm under pressure and not making things up.</p><a class="more" href="https://github.com/PriorityNexusLLC/SCR-01-Protocol">Code →</a></div>
-    <div class="card"><span class="tag">Systems</span><h3>Deterministic Governance &amp; Circuit-Breaker Architecture</h3><p>A design for systems that stop themselves when they leave the checked range, with records that show any tampering. No sign-off can wave a failure through.</p><a class="more" href="https://github.com/PriorityNexusLLC/Deterministic-Governance-Circuit-Breaker-Architecture">Code →</a></div>
-    <div class="card"><span class="tag">Biology</span><h3>Prion Research Notes</h3><p>Thirty-five sections on prion disease, every claim checked against the paper it came from, corrections kept in the open. Written for a reader without a biology background.</p><a class="more" href="https://github.com/PriorityNexusLLC/Prion-Protien-Research">Read the summary →</a></div>
-    <div class="card"><span class="tag">Engine</span><h3>PNMaster-Graph</h3><p>The code behind the sky and the check: connectors to SEC, IRS, Congress, lobbying and campaign-finance records, the nine-question validator, the balance measures and the hash-chained log. <a href="https://github.com/PriorityNexusLLC/PNMaster-Graph/blob/main/docs/concept-paper.md">Concept paper</a>.</p><a class="more" href="https://github.com/PriorityNexusLLC/PNMaster-Graph">Code →</a></div>
-  </div>
-</div></section>
-
-<section id="publish"><div class="wrap">
-  <h2>How we publish</h2>
-  <p class="sub">Signals for review, not verdicts.</p>
-  <ol class="steps">
-    <li><b>Attributed to the evidence.</b> Every finding names the source it rests on, with a link.</li>
-    <li><b>Checked twice.</b> Work is drafted, then independently re-checked: sources re-opened, wording screened, limits stated.</li>
-    <li><b>Made with AI assistance, and why.</b> Priority Nexus is run by one person, its founder, who is autistic and has ADHD (AuDHD) and is a woman in a man's world. The programs and the AI do the reading, the counting and the drafting at a scale one person could not reach alone. The rules they follow, the records they may use and the decision to publish are hers. It is said here so readers can weigh it, the same way every other interest is said.</li>
-    <li><b>Right to respond.</b> No one is asked to comment before a report goes out. Anyone named may respond afterwards, and the response is posted in full, under their name, the day it arrives.</li>
-    <li><b>Open corrections.</b> Found an error? <a href="https://github.com/PriorityNexusLLC/PNMaster-Graph/discussions/1">Post it here</a> or write to us. Every e-mail is read by a program the moment it arrives and the check begins; the message is posted at once, in full, under the person or company it says it is from, and stays that way unless the check shows otherwise. Contact details are never posted. Corrections are dated, and earlier versions stay available.</li>
-  </ol>
-</div></section>
-
-<section id="contact"><div class="wrap">
-  <h2>Contact</h2>
-  <p class="sub">Research partners, co-founders, funders, reviewers, corrections and responses are welcome.</p>
-  <p><b>Josie Anderson</b>, Architecture &amp; Systems Lead</p>
-  <div class="contact">
-    <a class="btn" href="mailto:theaistherapist@gmail.com" title="Priority Nexus, all projects">theaistherapist@gmail.com</a>
-    <a class="btn" href="mailto:prighthesky@gmail.com" title="PRIGH: the sky, the check, corrections and responses">prighthesky@gmail.com · PRIGH inquiries</a>
-    <a class="btn" href="https://github.com/PriorityNexusLLC">GitHub</a>
-  </div>
-</div></section>
-
+</header>
+<div class="doors">
+  <a href="/PRIGH-Sky/check/"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 6h17l8 8v28H13z"/><path d="M30 6v8h8"/><path d="M19 23l3 3 6-6"/><path d="M19 34h13"/></svg><b>Accountability Check</b><span>Put a rule through nine questions.</span></a>
+  <a href="/PRIGH-Sky/"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="11" r="4"/><circle cx="10" cy="34" r="4"/><circle cx="38" cy="34" r="4"/><circle cx="24" cy="27" r="3"/><path d="M24 15v9M21.5 29l-8 3.5M26.5 29l8 3.500M13 31l9-17M35 31l-9-17"/></svg><b>PRIGH: the sky</b><span>Who is tied to whom in public life, from filings only.</span></a>
+  <a href="/Assumption-Check-/"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M19 6h10M21 6v12L10 38a3 3 0 0 0 2.700 4.500h22.600A3 3 0 0 0 38 38L27 18V6"/><path d="M15 30h18"/></svg><b>Assumption Check</b><span>A scientific claim, and the one test that would settle it.</span></a>
+  <a href="/when-a-limit-breaks/"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 30h10l5-12 5 20 5-26 4 18h11"/><path d="M36 8v32" stroke-dasharray="3 4"/></svg><b>When a Limit Breaks</b><span>What 1,223 sciences say happens when a limit is crossed.</span></a>
+</div>
+<script>
+// Old links pointed at sections of the one-page site. Send them to the pages that hold those sections now.
+(function () {
+  var to = { "#projects": "/projects/", "#contact": "/contact/", "#what": "/about/#what", "#how": "/about/#how", "#publish": "/about/#publish" }[location.hash];
+  if (to) { location.replace(to); return; }
+  var c = document.getElementById("stars"), x = c.getContext("2d");
+  function draw() {
+    var w = c.width = c.offsetWidth, h = c.height = c.offsetHeight, n = Math.round(w * h / 5200), s = 7;
+    function r() { s = (s * 16807) % 2147483647; return s / 2147483647; }
+    x.clearRect(0, 0, w, h);
+    for (var i = 0; i < n; i++) {
+      var px = r() * w, py = Math.pow(r(), 1.5) * h * 0.86, big = r() > 0.94;
+      x.globalAlpha = 0.25 + r() * 0.7; x.fillStyle = r() > 0.8 ? "#d9b8ff" : "#ffffff";
+      x.beginPath(); x.arc(px, py, big ? 1.5 : 0.75, 0, 6.3); x.fill();
+    }
+  }
+  draw(); addEventListener("resize", draw);
+})();
+</script>
 <footer><div class="wrap">
+  <div class="foot-links"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/when-a-limit-breaks/">When a Limit Breaks</a><a href="/resources/">Resources</a><a href="/contact/">Contact</a><a href="https://github.com/PriorityNexusLLC">GitHub</a></div>
   © 2026 Priority Nexus LLC · Priority Nexus™ · <i>Prioritizing Boundaries</i> · Open-source projects are licensed under Apache 2.0 unless stated otherwise. · Support the work, anonymously if you like: <a href="https://opencollective.com/priority-nexus">opencollective.com/priority-nexus</a>
 </div></footer>
 </body>
