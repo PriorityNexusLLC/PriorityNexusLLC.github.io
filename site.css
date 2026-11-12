@@ -68,3 +68,13 @@ ol.steps { padding-left: 20px; color: var(--muted); } ol.steps li { margin: 6px 
 .btn.solid { background: var(--violet-2); }
 footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--muted); font-size: 14px; }
 footer .foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 12px; }
+
+/* front page: the small line under the buttons, and the Balance band */
+.hero .wip { margin: 18px 0 0; color: var(--muted); font-size: 14.5px; font-style: italic; letter-spacing: .02em; }
+.feature { border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(139, 63, 224, .16), rgba(0, 0, 0, 0) 72%); }
+.feature .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 32px; padding-top: 34px; padding-bottom: 34px; }
+.feature .txt { flex: 1 1 440px; min-width: 0; }
+.feature .tag { display: inline-block; margin-bottom: 6px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--violet); }
+.feature h2 { font-size: clamp(20px, 3vw, 26px); margin: 0 0 8px; text-wrap: balance; }
+.feature p { margin: 0; color: var(--muted); max-width: 62ch; }
+.feature .go { display: flex; flex-wrap: wrap; gap: 12px; }
