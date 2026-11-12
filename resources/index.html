@@ -136,7 +136,11 @@
     if (of) {
       var box = el("span"), line = of.office + (of.address ? ", " + of.address : "") + (of.phone ? " · " : "");
       box.appendChild(document.createTextNode(line));
-      if (of.phone) { var oa = el("a", of.phone); oa.href = "tel:+1" + of.phone.replace(/[^0-9]/g, ""); box.appendChild(oa); }
+      if (of.phone) {
+        var first = (of.phone.match(/1?[-. (]*[0-9]{3}[-. )]*[0-9]{3}[-. ][0-9]{4}/) || [""])[0].replace(/[^0-9]/g, "");
+        if (first.length === 11) first = first.slice(1);
+        var oa = el(first.length === 10 ? "a" : "span", of.phone); if (first.length === 10) oa.href = "tel:+1" + first; box.appendChild(oa);
+      }
       if (of.contact_url) { box.appendChild(document.createTextNode(" · ")); var oc = el("a", "How to reach a member →"); oc.href = of.contact_url; oc.target = "_blank"; oc.rel = "noopener"; box.appendChild(oc); }
       row("Or through", box);
     }
