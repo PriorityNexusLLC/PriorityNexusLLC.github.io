@@ -14,18 +14,18 @@
 <style>
 /* Layout: one reading column. Plain sentence first; the science's own words and the sources sit inside drop-downs. */
 :root {
-  --bg: #f5f7f8; --panel: #ffffff; --fg: #142027; --muted: #51616b; --line: #d5dde2;
-  --accent: #0b5f73; --accent-soft: #dcecf1; --warn: #8a5300; --warn-soft: #f6ead2;
+  --bg: #000000; --panel: #110e1a; --fg: #ece8f5; --muted: #a79fbd; --line: #2a2140;
+  --accent: #b06cf5; --accent-soft: #23183a; --warn: #e6b566; --warn-soft: #3a2e16; color-scheme: dark;
   --head: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #0f1518; --panel: #172025; --fg: #e7edf0; --muted: #9db0ba; --line: #2c3a42;
-  --accent: #7cc9dc; --accent-soft: #17343d; --warn: #e6b566; --warn-soft: #3a2e16; color-scheme: dark } }
+  --bg: #000000; --panel: #110e1a; --fg: #ece8f5; --muted: #a79fbd; --line: #2a2140;
+  --accent: #b06cf5; --accent-soft: #23183a; --warn: #e6b566; --warn-soft: #3a2e16; color-scheme: dark } }
 :root[data-theme="dark"] {
-  --bg: #0f1518; --panel: #172025; --fg: #e7edf0; --muted: #9db0ba; --line: #2c3a42;
-  --accent: #7cc9dc; --accent-soft: #17343d; --warn: #e6b566; --warn-soft: #3a2e16; color-scheme: dark }
+  --bg: #000000; --panel: #110e1a; --fg: #ece8f5; --muted: #a79fbd; --line: #2a2140;
+  --accent: #b06cf5; --accent-soft: #23183a; --warn: #e6b566; --warn-soft: #3a2e16; color-scheme: dark }
 body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 18px; line-height: 1.55; }
 .wrap { max-width: 46rem; margin: 0 auto; padding-block: 2rem 4rem;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
