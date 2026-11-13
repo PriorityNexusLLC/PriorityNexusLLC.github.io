@@ -108,3 +108,4 @@ details.help .line .nm { font-weight: 650; } details.help .line .who { color: va
 .repcard h3 { margin: 0 0 2px; } .repcard .o { color: var(--muted); margin: 0 0 10px; }
 .repcard .r { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); }
 .repcard .k { color: var(--muted); font-size: 14px; } .repcard .src { color: var(--muted); font-size: 13.5px; margin: 10px 0 0; }
+.feature.wide p { max-width: 88ch; }
