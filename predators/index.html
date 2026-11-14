@@ -333,6 +333,7 @@ $("find").addEventListener("input", show); go("short");
 $("limits").innerHTML = LIMITS.map(t => "<li>" + esc(t) + "</li>").join("");
 </script>
 
-<div class="pnfoot">&copy; 2026 Priority Nexus LLC &middot; <i>Prioritizing Boundaries</i> &middot; Found an error? <a href="/contact/">Tell us</a>. Corrections are dated and earlier versions stay available.</div>
+<div class="pnfoot">&copy; 2026 Priority Nexus LLC &middot; <i>Prioritizing Boundaries</i><span class="visits"></span> &middot; Found an error? <a href="/contact/">Tell us</a>. Corrections are dated and earlier versions stay available. This site counts visits and keeps nothing about the visitor.</div>
+<script data-goatcounter="https://prioritynexusllc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script><script>fetch("https://prioritynexusllc.goatcounter.com/counter/TOTAL.json").then(function(r){return r.ok?r.json():null}).then(function(j){if(!j)return;document.querySelectorAll(".visits").forEach(function(e){e.textContent=" · "+j.count+" visits"})}).catch(function(){})</script>
 </body>
 </html>
