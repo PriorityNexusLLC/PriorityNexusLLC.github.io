@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free reports on businesses and other bodies, built from public filings, each connection with its source.">
+<meta property="og:title" content="Reports: what public filings show - Priority Nexus LLC">
+<meta property="og:description" content="Free reports on businesses and other bodies, built from public filings, each connection with its source.">
+<meta property="og:image" content="https://prioritynexusllc.org/pn-logo.png">
+<title>Reports: what public filings show - Priority Nexus LLC</title>
+<link rel="icon" href="/pn-logo.png">
+</head>
+<body style="margin:0">
+<style>
+/* Layout: one reading column. The rule in plain words first; the research, for and against, inside drop-downs. */
+:root {
+  --bg: #000000; --panel: #110e1a; --fg: #ece8f5; --muted: #a79fbd; --line: #2a2140;
+  --accent: #b06cf5; --accent-soft: #23183a; --warn: #e6b566; --warn-soft: #3a2e16; --bad: #f08a8a; --bad-soft: #3a1a1e; --good: #8fd6a4; --good-soft: #143022;
+  --head: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 18px; line-height: 1.55; }
+.wrap { max-width: 46rem; margin: 0 auto; padding-block: 2rem 4rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 2.75rem; }
+h1, h2 { font-family: var(--head); text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: clamp(2rem, 6vw, 2.9rem); }
+h2 { font-size: 1.6rem; }
+h3 { margin: 1.2rem 0 0; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 650; }
+p { margin: 0; }
+section, header { display: flex; flex-direction: column; gap: 1rem; }
+.lead { font-size: 1.25rem; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+a { color: var(--accent); overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.goals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+.goals div { border-top: 3px solid var(--accent); padding-top: 0.5rem; font-family: var(--head); font-size: 1.15rem; }
+@media (max-width: 34rem) { .goals { grid-template-columns: 1fr 1fr; } }
+details { min-width: 0; }
+summary { cursor: pointer; }
+.list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.item { border-bottom: 1px solid var(--line); }
+.item > summary { list-style: none; padding: 0.95rem 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
+.item > summary::-webkit-details-marker { display: none; }
+.item > summary .name { font-weight: 650; font-size: 1.1rem; }
+.item > summary .name::before { content: "+"; display: inline-block; width: 1.1em; color: var(--accent); font-weight: 700; }
+.item[open] > summary .name::before { content: "\2212"; }
+.item > summary .q { padding-left: 1.2rem; color: var(--muted); font-style: italic; }
+.item > summary .rule { padding-left: 1.2rem; }
+.item > summary .v { padding-left: 1.2rem; }
+.body { padding: 0.25rem 0 1.25rem 1.2rem; display: flex; flex-direction: column; gap: 1rem; }
+.label { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 650; }
+.find { display: flex; flex-direction: column; gap: 0.35rem; }
+.more { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.more > summary { padding: 0.5rem 0.75rem; font-size: 0.95rem; color: var(--accent); font-weight: 600; }
+.more > .in { padding: 0.25rem 0.75rem 0.85rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.95rem; }
+.kv { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 0.35rem 0.75rem; margin: 0; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 34rem) { .kv { grid-template-columns: 1fr; gap: 0.1rem; } .kv dd { margin-bottom: 0.5rem; } }
+.tag { display: inline-block; font-size: 0.8rem; font-weight: 650; padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+.tag.good { background: var(--good-soft); color: var(--good); }
+.tag.warn { background: var(--warn-soft); color: var(--warn); }
+.tag.bad { background: var(--bad-soft); color: var(--bad); }
+.story { border-left: 3px solid var(--accent); padding-left: 1rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.plainlist { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+
+.rep { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 1.2rem 1.3rem; margin: 1.2rem 0; }
+.rep h2 { margin: 0 0 0.2rem; }
+.rep .ids { color: var(--muted); margin: 0 0 0.8rem; }
+.rep ul { margin: 0.6rem 0 0.9rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.rep .go { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.9rem 0 0.3rem; }
+.rep .go a { display: inline-block; padding: 0.55rem 1rem; border-radius: 999px; border: 1px solid var(--accent); text-decoration: none; font-weight: 650; }
+.rep .go a.solid { background: var(--accent); color: #fff; }
+.rep .small { color: var(--muted); font-size: 0.95rem; margin: 0.4rem 0 0; }
+</style>
+<style>
+nav.pn { position: sticky; top: 0; z-index: 5; background: rgba(0, 0, 0, .88); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); font-size: 16px; }
+nav.pn .in { max-width: 1040px; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; gap: 18px; height: 56px; overflow-x: auto; }
+nav.pn .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .04em; white-space: nowrap; color: var(--fg); text-decoration: none; }
+nav.pn .brand img { width: 30px; height: 30px; border-radius: 6px; }
+nav.pn .links { margin-left: auto; display: flex; gap: 16px; font-size: 14px; white-space: nowrap; }
+nav.pn .links a { color: var(--muted); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+nav.pn .links a:hover, nav.pn .links a.here { color: var(--fg); } nav.pn .links a.here { border-bottom-color: var(--accent); }
+@media (max-width: 640px) { nav.pn .brand span { display: none; } nav.pn .links { gap: 14px; } }
+.pnfoot { max-width: 46rem; margin: 0 auto; padding: 0 16px 40px; color: var(--muted); font-size: 14px; }
+</style>
+<nav class="pn"><div class="in">
+  <a class="brand" href="/"><img src="/pn-logo.png" alt=""><span>Priority Nexus LLC</span></a>
+  <div class="links"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/when-a-limit-breaks/">Limit&nbsp;Breaks</a><a href="/predators/">Predators</a><a href="/resources/">Resources</a><a href="/contact/">Contact</a></div>
+</div></nav>
+
+
+<div class="wrap">
+  <header>
+    <h1>Reports</h1>
+    <p class="lead">Free reports on businesses and other bodies, from what they and others have filed with public registries. Nothing here comes from news or from opinion.</p>
+    <p class="lead">Each report lists every connection with a link to its filing, what a second official source confirms, the money on the record, and how the subject sits against published standards of balance.</p>
+  </header>
+  <div class="rep"><h2>BlackRock, Inc.</h2><p class="ids">SEC number 0002012383 (earlier number 0001364742), ticker BLK, New York</p><p>Public filings connect BlackRock, Inc. to 188 organizations and people directly. 185 are current and 3 have ended. 155 are confirmed by a second official source.</p><ul><li>176 of them are companies where BlackRock, Inc. itself reported holding 5% or more of the shares.</li><li>11 members of the U.S. House reported buying or selling BlackRock shares on their own disclosure forms.</li><li>5 people on its board are flagged on one Balance measure, the number of boards a person sits on. One is reported with 22 public-company board seats and one with 10, against a guideline of no more than 5. Three are sitting chief executives with more than 2 outside seats.</li><li>No lobbying, contribution, contract or grant records are on the map for it yet. Missing is not the same as clean.</li></ul><div class="go"><a class="solid" href="/PRIGH-Sky/sky.html?report=1#ENT_BLACKROCK">Open the full report</a><a href="/PRIGH-Sky/sky.html#ENT_BLACKROCK">See it on the sky</a></div><p class="small">Filings dated 10 January 2025 to 4 November 2026. Sources: Schedule 13D and 13G, Forms 3, 4 and 5, House financial disclosures. These figures were read on 14 November 2026; the full report is built fresh from the records each time it is opened, so its numbers can be newer.</p><p class="small">The company took a new SEC number in 2024. Filings before that sit under the earlier number: 41 directors, officers and owners, from 2007 to September 2024. <a href="/PRIGH-Sky/sky.html?report=1#ENT_BLACKROCK_INC">Open that report</a></p></div>
+  <section>
+    <h2>How to read a report</h2>
+    <ul class="plainlist">
+      <li>A connection is a filed fact: a board seat, a stake, a contract, a contribution. It says nothing about intent. Connected is not guilty.</li>
+      <li>A Balance flag is a signal for review, set beside a published standard. It is not a finding of wrongdoing.</li>
+      <li>The full report is built by the page itself from the public map. No person has read each one through before it appears. It says so at its top.</li>
+      <li>The map is still being built. Missing is not the same as clean.</li>
+      <li>Any report can be saved or printed as a PDF from the button at its top. It carries a fingerprint so a copy can be checked against the records.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>If you are named in a report</h2>
+    <p>Send your answer to <a href="mailto:prighthesky@gmail.com">prighthesky@gmail.com</a>. It is posted in full, under your name, the day it arrives. If a record is wrong, say which one. It is corrected with a dated note.</p>
+  </section>
+</div>
+
+<div class="pnfoot">&copy; 2026 Priority Nexus LLC &middot; <i>Prioritizing Boundaries</i> &middot; Found an error? <a href="/contact/">Tell us</a>. Corrections are dated and earlier versions stay available.</div>
+</body>
+</html>
