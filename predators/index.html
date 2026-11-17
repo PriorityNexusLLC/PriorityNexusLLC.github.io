@@ -114,11 +114,16 @@ nav.pn .links { margin-left: auto; display: flex; gap: 16px; font-size: 14px; wh
 nav.pn .links a { color: var(--muted); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
 nav.pn .links a:hover, nav.pn .links a.here { color: var(--fg); } nav.pn .links a.here { border-bottom-color: var(--accent); }
 @media (max-width: 640px) { nav.pn .brand span { display: none; } nav.pn .links { gap: 14px; } }
+.navbtn { display: none; margin-left: auto; font: inherit; font-size: 14px; font-weight: 600; color: var(--fg); background: rgba(139, 63, 224, .18); border: 1px solid var(--line); border-radius: 8px; padding: 6px 14px; cursor: pointer; }
+@media (max-width: 760px) { nav.pn .in { overflow: visible; } nav.pn .brand span { display: inline; } nav.pn .navbtn { display: block; }
+  nav.pn .links { display: none; position: absolute; left: 0; right: 0; top: 100%; margin: 0; flex-direction: column; gap: 0; padding: 4px 16px 12px; background: rgba(0, 0, 0, .97); border-bottom: 1px solid var(--line); white-space: normal; }
+  nav.pn.open .links { display: flex; } nav.pn .links a { padding: 13px 0; font-size: 16px; border-bottom: 1px solid var(--line); } nav.pn .links a.here { border-bottom-color: var(--line); color: var(--accent); } }
 .pnfoot { max-width: 46rem; margin: 0 auto; padding: 0 16px 40px; color: var(--muted); font-size: 14px; }
 </style>
 <nav class="pn"><div class="in">
   <a class="brand" href="/"><img src="/pn-logo.png" alt=""><span>People First</span></a>
-  <div class="links"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/when-a-limit-breaks/">Limit&nbsp;Breaks</a><a class="here" href="/predators/">Predators</a><a href="/resources/">Resources</a><a href="/accountability-check/">Accountability&nbsp;Check</a><a href="/contact/">Contact</a></div>
+  <button class="navbtn" type="button" aria-expanded="false" aria-controls="navlinks" onclick="var n=this.closest(`nav`);this.setAttribute(`aria-expanded`,n.classList.toggle(`open`))">Menu</button>
+  <div class="links" id="navlinks"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/when-a-limit-breaks/">Limit&nbsp;Breaks</a><a class="here" href="/predators/">Predators</a><a href="/resources/">Resources</a><a href="/accountability-check/">Accountability&nbsp;Check</a><a href="/contact/">Contact</a></div>
 </div></nav>
 
 
