@@ -137,5 +137,5 @@ details.help .line .nm { font-weight: 650; } details.help .line .who { color: va
 @media (prefers-reduced-motion: reduce) { .after .fric path { animation: none !important; } }
 .after .fl { position: absolute; bottom: 8px; z-index: 1; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; opacity: .8; }
 .after .fl.a { left: 16px; color: var(--violet); }
-.after .fl.b { right: 16px; color: #e2735e; }
-@media (max-width: 520px) { .after .fl { font-size: 9.5px; letter-spacing: .08em; } }
+.after .fl.b { right: calc(25% + 12px); color: #e2735e; }
+@media (max-width: 520px) { .after .fl { font-size: 8.5px; letter-spacing: .03em; } .after .fl.a { left: 8px; } }
