@@ -138,4 +138,4 @@ details.help .line .nm { font-weight: 650; } details.help .line .who { color: va
 .after .fl { position: absolute; bottom: 8px; z-index: 1; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; opacity: .8; }
 .after .fl.a { left: calc(25% + 12px); color: var(--violet); }
 .after .fl.b { right: calc(25% + 12px); color: #e2735e; }
-@media (max-width: 520px) { .after .fl { font-size: 8.5px; letter-spacing: .03em; } .after .fl.a { bottom: 21px; } }
+@media (max-width: 520px) { .after .fl { font-size: 8.5px; letter-spacing: .03em; } .after .fl.a { bottom: 23px; } .after .wrap { padding-bottom: 50px; } }
