@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ask any law nine plain questions, and see who the law says MUST to, who gets the OR ELSE, and who gets the soft words.">
+<meta property="og:title" content="Accountability Check: rules or suggestions? - Priority Nexus LLC">
+<meta property="og:description" content="Ask any law nine plain questions, and see who the law says MUST to, who gets the OR ELSE, and who gets the soft words.">
+<meta property="og:image" content="https://prioritynexusllc.org/pn-logo.png">
+<title>Accountability Check: rules or suggestions? - Priority Nexus LLC</title>
+<link rel="icon" href="/pn-logo.png">
+</head>
+<body style="margin:0">
+<style>
+/* Layout: one reading column. The rule in plain words first; the research, for and against, inside drop-downs. */
+:root {
+  --bg: #000000; --panel: #110e1a; --fg: #ece8f5; --muted: #a79fbd; --line: #2a2140;
+  --accent: #b06cf5; --accent-soft: #23183a; --warn: #e6b566; --warn-soft: #3a2e16; --bad: #f08a8a; --bad-soft: #3a1a1e; --good: #8fd6a4; --good-soft: #143022;
+  --head: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 18px; line-height: 1.55; }
+.wrap { max-width: 46rem; margin: 0 auto; padding-block: 2rem 4rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 2.75rem; }
+h1, h2 { font-family: var(--head); text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: clamp(2rem, 6vw, 2.9rem); }
+h2 { font-size: 1.6rem; }
+h3 { margin: 1.2rem 0 0; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 650; }
+p { margin: 0; }
+section, header { display: flex; flex-direction: column; gap: 1rem; }
+.lead { font-size: 1.25rem; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+a { color: var(--accent); overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.goals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+.goals div { border-top: 3px solid var(--accent); padding-top: 0.5rem; font-family: var(--head); font-size: 1.15rem; }
+@media (max-width: 34rem) { .goals { grid-template-columns: 1fr 1fr; } }
+details { min-width: 0; }
+summary { cursor: pointer; }
+.list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.item { border-bottom: 1px solid var(--line); }
+.item > summary { list-style: none; padding: 0.95rem 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
+.item > summary::-webkit-details-marker { display: none; }
+.item > summary .name { font-weight: 650; font-size: 1.1rem; }
+.item > summary .name::before { content: "+"; display: inline-block; width: 1.1em; color: var(--accent); font-weight: 700; }
+.item[open] > summary .name::before { content: "\2212"; }
+.item > summary .q { padding-left: 1.2rem; color: var(--muted); font-style: italic; }
+.item > summary .rule { padding-left: 1.2rem; }
+.item > summary .v { padding-left: 1.2rem; }
+.body { padding: 0.25rem 0 1.25rem 1.2rem; display: flex; flex-direction: column; gap: 1rem; }
+.label { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 650; }
+.find { display: flex; flex-direction: column; gap: 0.35rem; }
+.more { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.more > summary { padding: 0.5rem 0.75rem; font-size: 0.95rem; color: var(--accent); font-weight: 600; }
+.more > .in { padding: 0.25rem 0.75rem 0.85rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.95rem; }
+.kv { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 0.35rem 0.75rem; margin: 0; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 34rem) { .kv { grid-template-columns: 1fr; gap: 0.1rem; } .kv dd { margin-bottom: 0.5rem; } }
+.tag { display: inline-block; font-size: 0.8rem; font-weight: 650; padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+.tag.good { background: var(--good-soft); color: var(--good); }
+.tag.warn { background: var(--warn-soft); color: var(--warn); }
+.tag.bad { background: var(--bad-soft); color: var(--bad); }
+.story { border-left: 3px solid var(--accent); padding-left: 1rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.plainlist { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+
+.door { border: 1px solid var(--line); border-radius: 16px; background: var(--panel); padding: 1.3rem 1.4rem; margin: 1.2rem 0 0.4rem; }
+.door h2 { margin: 0 0 0.4rem; }
+.door a.go { display: inline-block; margin-top: 0.7rem; padding: 0.65rem 1.2rem; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 700; text-decoration: none; }
+.story { border-left: 4px solid var(--accent); padding: 0.2rem 0 0.2rem 1rem; margin: 1rem 0; font-size: 1.12rem; }
+.kinds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; margin: 1rem 0; }
+.kind { border: 1px solid var(--line); border-radius: 14px; padding: 0.9rem 1rem; background: var(--panel); }
+.kind .stamp { display: inline-block; font-weight: 800; letter-spacing: .08em; padding: 0.15rem 0.6rem; border-radius: 8px; border: 2px solid currentColor; transform: rotate(-2deg); }
+.kind .plain { font-size: 1.15rem; font-weight: 650; margin: 0.6rem 0 0.4rem; }
+.kind .q { margin: 0; color: var(--muted); font-style: italic; }
+.kind .src { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.85rem; }
+.k-must .stamp { color: var(--accent); } .k-else .stamp { color: var(--bad); } .k-soft .stamp { color: var(--warn); } .k-shield .stamp { color: var(--good); }
+.who { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 0.3rem 1rem; align-items: center; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+.who .lab b { display: block; } .who .lab span { color: var(--muted); font-size: 0.92rem; }
+.meter { display: flex; align-items: center; gap: 0.7rem; }
+.bar { display: block; height: 1.3rem; border-radius: 999px; background: var(--bad); min-width: 4px; }
+.bar.good { background: var(--good); }
+.meter em { font-style: normal; font-weight: 800; font-size: 1.2rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.t { width: 100%; border-collapse: collapse; margin: 0.8rem 0; }
+table.t th, table.t td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.t thead th { color: var(--muted); font-weight: 600; font-size: 0.92rem; }
+.chip { display: inline-block; min-width: 2.2rem; text-align: center; padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: 800; }
+.c-else { background: var(--bad-soft); color: var(--bad); } .c-soft { background: var(--warn-soft); color: var(--warn); } .c-shield { background: var(--good-soft); color: var(--good); }
+.big { font-size: 1.15rem; }
+@media (max-width: 640px) { .kinds { grid-template-columns: minmax(0, 1fr); } .who { grid-template-columns: minmax(0, 1fr); } table.t { font-size: 0.92rem; } }
+</style>
+<style>
+nav.pn { position: sticky; top: 0; z-index: 5; background: rgba(0, 0, 0, .88); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); font-size: 16px; }
+nav.pn .in { max-width: 1040px; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; gap: 18px; height: 56px; overflow-x: auto; }
+nav.pn .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .04em; white-space: nowrap; color: var(--fg); text-decoration: none; }
+nav.pn .brand img { width: 30px; height: 30px; border-radius: 6px; }
+nav.pn .links { margin-left: auto; display: flex; gap: 16px; font-size: 14px; white-space: nowrap; }
+nav.pn .links a { color: var(--muted); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+nav.pn .links a:hover, nav.pn .links a.here { color: var(--fg); } nav.pn .links a.here { border-bottom-color: var(--accent); }
+@media (max-width: 640px) { nav.pn .brand span { display: none; } nav.pn .links { gap: 14px; } }
+.pnfoot { max-width: 46rem; margin: 0 auto; padding: 0 16px 40px; color: var(--muted); font-size: 14px; }
+</style>
+<nav class="pn"><div class="in">
+  <a class="brand" href="/"><img src="/pn-logo.png" alt=""><span>Priority Nexus LLC</span></a>
+  <div class="links"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/when-a-limit-breaks/">Limit&nbsp;Breaks</a><a href="/predators/">Predators</a><a href="/resources/">Resources</a><a class="here" href="/accountability-check/">Accountability&nbsp;Check</a><a href="/contact/">Contact</a></div>
+</div></nav>
+
+
+<div class="wrap">
+  <header>
+    <h1>Accountability Check</h1>
+    <p class="lead">Rules are meant to hold everyone. This page checks whether they do.</p>
+  </header>
+
+  <div class="door">
+    <h2>Ask a rule nine questions</h2>
+    <p>Pick any law. We ask it nine plain questions, like who wrote it, who pays, and whether you can say no. 86,078 rules are ready to ask.</p>
+    <a class="go" href="/PRIGH-Sky/check/">Open the nine questions</a>
+  </div>
+
+  <section id="rules-or-suggestions">
+    <h2>Rules or suggestions?</h2>
+    <p class="story">Think of a classroom rule: &ldquo;No running.&rdquo; For some kids it ends with &ldquo;or you sit out.&rdquo; For some it ends with &ldquo;please try.&rdquo; And some kids carry a note that says they can&rsquo;t be sent to sit out at all.</p>
+    <p class="big">We read about 1,380,000 sentences of law and sorted them the same way, to see who gets which.</p>
+
+    <h3>Four kinds of sentence</h3>
+    <div class="kinds"><div class="kind k-must"><span class="stamp">MUST</span><p class="plain">You have to.</p><p class="q">&ldquo;If the enrollee accepts the offer of assistance, the plan must provide the assistance.&rdquo;</p><p class="src">42 CFR part 422</p></div><div class="kind k-else"><span class="stamp">OR ELSE</span><p class="plain">You have to, or you get in trouble.</p><p class="q">&ldquo;Any person who willfully violates this section shall be fined not more than $10,000 or imprisoned for not more than one year, or both.&rdquo;</p><p class="src">29 U.S.C. ch. 11, subch. IV</p></div><div class="kind k-soft"><span class="stamp">PLEASE TRY</span><p class="plain">You should. Nothing happens if you don&rsquo;t.</p><p class="q">&ldquo;The State agency should supply employers with a sufficient number of posters for distribution throughout their places of business and should see that the posters are conspicuously displayed at all times.&rdquo;</p><p class="src">20 CFR part 614</p></div><div class="kind k-shield"><span class="stamp">CAN&rsquo;T BE BLAMED</span><p class="plain">Even if it goes wrong, you can&rsquo;t get in trouble.</p><p class="q">&ldquo;The Federal Government shall not be liable for any claim based upon the exercise or performance of or the failure to exercise or perform a discretionary function or duty &hellip;&rdquo;</p><p class="src">42 U.S.C. ch. 68, subch. III</p></div></div>
+
+    <h3>Who gets the OR ELSE?</h3>
+    <p>Out of every 1,000 times the law says MUST to someone, this is how many times it says OR ELSE to them.</p>
+    <div class="who"><div class="lab"><b>Anyone</b><span>The law&rsquo;s own word: &ldquo;whoever&rdquo; or &ldquo;any person.&rdquo; It covers people and companies alike.</span></div><div class="meter"><i class="bar " style="width:100.0%"></i><em>314</em></div></div><div class="who"><div class="lab"><b>A business</b><span>A company, an employer, a bank, a landlord.</span></div><div class="meter"><i class="bar " style="width:4.7%"></i><em>15</em></div></div><div class="who"><div class="lab"><b>A person, by name of what they are</b><span>A worker, a tenant, a patient, a student, a parent.</span></div><div class="meter"><i class="bar " style="width:4.1%"></i><em>13</em></div></div><div class="who"><div class="lab"><b>The government</b><span>An agency, an office, a court, a public official.</span></div><div class="meter"><i class="bar " style="width:0.6%"></i><em>about 1</em></div></div>
+    <p class="muted">Most punishments in the law are written against &ldquo;any person.&rdquo; Almost none name the government as the one punished.</p>
+
+    <h3>Who gets the soft words and the shields?</h3>
+    <p>For every 10 times the law says OR ELSE to someone, this is how many times it says PLEASE TRY to them, and how many times it says they CAN&rsquo;T BE BLAMED.</p>
+    <table class="t"><thead><tr><th></th><th>OR ELSE</th><th>PLEASE TRY</th><th>CAN&rsquo;T BE BLAMED</th></tr></thead><tbody><tr><th>Anyone</th><td><span class="chip c-else">10</span></td><td><span class="chip c-soft">about 1</span></td><td><span class="chip c-shield">about 1</span></td></tr><tr><th>A business</th><td><span class="chip c-else">10</span></td><td><span class="chip c-soft">16</span></td><td><span class="chip c-shield">9</span></td></tr><tr><th>A person, by name of what they are</th><td><span class="chip c-else">10</span></td><td><span class="chip c-soft">37</span></td><td><span class="chip c-shield">10</span></td></tr><tr><th>The government</th><td><span class="chip c-else">10</span></td><td><span class="chip c-soft">356</span></td><td><span class="chip c-shield">56</span></td></tr></tbody></table>
+
+    <h3>When there is an OR ELSE, what is it?</h3>
+    <table class="t"><thead><tr><th></th><th>Names prison</th><th>Money only, no crime</th><th>Fine in the middle</th><th>Biggest fine</th></tr></thead><tbody><tr><th>Anyone</th><td>26 in 100</td><td>6 in 100</td><td>$1,000</td><td>$100 million</td></tr><tr><th>A business</th><td>11 in 100</td><td>18 in 100</td><td>$1,000</td><td>$50 million</td></tr><tr><th>A person, by name of what they are</th><td>25 in 100</td><td>6 in 100</td><td>$1,000</td><td>$30 million</td></tr><tr><th>The government</th><td>17 in 100</td><td>3 in 100</td><td>$1,000</td><td>$500,000</td></tr></tbody></table>
+    <ul class="plainlist">
+      <li>The fine in the middle is the same $1,000 for everyone. A thousand dollars does not weigh the same on a person as on a company.</li>
+      <li>&ldquo;Money only, no crime&rdquo; means a civil penalty: the one punished pays and gets no criminal record.</li>
+      <li>About two in three OR ELSE sentences give no number. They say &ldquo;as provided in&rdquo; another section, and the number is there.</li>
+    </ul>
+
+    <h3>How sure are we?</h3>
+    <p>A program did the sorting, so we checked it. We pulled sentences at random and had each one read by itself. This is how often the program had put the OR ELSE on the right one.</p>
+    <div class="who"><div class="lab"><b>Anyone</b></div><div class="meter"><i class="bar good" style="width:97%"></i><em>58 of 60 right</em></div></div><div class="who"><div class="lab"><b>A business</b></div><div class="meter"><i class="bar good" style="width:66%"></i><em>33 of 50 right</em></div></div><div class="who"><div class="lab"><b>A person</b></div><div class="meter"><i class="bar good" style="width:66%"></i><em>33 of 50 right</em></div></div><div class="who"><div class="lab"><b>The government</b></div><div class="meter"><i class="bar good" style="width:54%"></i><em>27 of 50 right</em></div></div>
+    <ul class="plainlist" style="margin-top:1rem">
+      <li>&ldquo;Anyone&rdquo; is solid. The other three are right only about half to two-thirds of the time, so their numbers are rough.</li>
+      <li>The first check caught the program reading &ldquo;an officer of a corporation&rdquo; as a public officer. We fixed that and checked again. The government count fell to a third of what it was.</li>
+      <li>The main finding rests on the solid one: about four in five OR ELSE sentences are written against &ldquo;any person.&rdquo;</li>
+    </ul>
+
+    <h3>What this cannot see</h3>
+    <ul class="plainlist">
+      <li>In law, &ldquo;any person&rdquo; includes companies. So the OR ELSE against &ldquo;anyone&rdquo; is not only against people.</li>
+      <li>A MUST in one sentence can have its OR ELSE three sections later. The program reads one sentence at a time and would count that MUST as having none.</li>
+      <li>It cannot tell whether an OR ELSE is ever used. A penalty on paper and a penalty in life are different things.</li>
+      <li>It finds words, not meaning. Amounts written out in words, like &ldquo;five hundred dollars,&rdquo; were not read.</li>
+      <li>What was read: the United States Code, federal regulations, and the state codes on the check. 74,621 pieces of law, on 2026-11-17. Card agreements and the rules of a faith were not read for this.</li>
+      <li>Nothing here says a law is good or bad, or that anyone broke one.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="pnfoot">&copy; 2026 Priority Nexus LLC &middot; <i>Prioritizing Boundaries</i><span class="visits"></span> &middot; Found an error? <a href="/contact/">Tell us</a>. Corrections are dated and earlier versions stay available. This site counts visits and keeps nothing about the visitor, just the click.</div>
+<script data-goatcounter="https://prioritynexusllc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script><script>fetch("https://prioritynexusllc.goatcounter.com/counter/TOTAL.json").then(function(r){return r.ok?r.json():null}).then(function(j){if(!j)return;document.querySelectorAll(".visits").forEach(function(e){e.textContent=" · "+j.count+" visits"})}).catch(function(){})</script>
+</body>
+</html>
