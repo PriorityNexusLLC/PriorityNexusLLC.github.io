@@ -38,3 +38,4 @@ Append-only record of what was added, edited, corrected, reviewed, deleted or pu
 | 2026-11-17 | Edited | A book that helps: Nonviolent Communication (Rosenberg) linked at its publisher, with the publisher's free materials, on Limit Breaks, Predators and Resources; the book itself is n | f5d6e50e7ec1 | commit | f126f8ca4548da27 |
 | 2026-11-17 | Edited | Home: Check a company opens Balance; Inspired by line under the buttons (Nonviolent Communication, Rosenberg). Reports: the single sample card removed, BlackRock stays in the dated | 17b3bd06ee4e | commit | 9fa1f9bf2e00910e |
 | 2026-11-17 | Edited | Home: Inspired by line shortened to 'At libraries - free handouts' | a7896f55eaaa | commit | 738ee41e5d9026cb |
+| 2026-11-18 | Edited | Share button on every page: copies the page link | fb32dc421f52 | commit | 9abfd5abeb34822c |
