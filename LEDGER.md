@@ -39,3 +39,4 @@ Append-only record of what was added, edited, corrected, reviewed, deleted or pu
 | 2026-11-17 | Edited | Home: Check a company opens Balance; Inspired by line under the buttons (Nonviolent Communication, Rosenberg). Reports: the single sample card removed, BlackRock stays in the dated | 17b3bd06ee4e | commit | 9fa1f9bf2e00910e |
 | 2026-11-17 | Edited | Home: Inspired by line shortened to 'At libraries - free handouts' | a7896f55eaaa | commit | 738ee41e5d9026cb |
 | 2026-11-18 | Edited | Share button on every page: copies the page link | fb32dc421f52 | commit | 9abfd5abeb34822c |
+| 2026-11-19 | Edited | Home page: quote under the top section | 478ca80e48c0 | commit | 2340fb80d3f0be09 |
