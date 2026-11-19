@@ -40,3 +40,4 @@ Append-only record of what was added, edited, corrected, reviewed, deleted or pu
 | 2026-11-17 | Edited | Home: Inspired by line shortened to 'At libraries - free handouts' | a7896f55eaaa | commit | 738ee41e5d9026cb |
 | 2026-11-18 | Edited | Share button on every page: copies the page link | fb32dc421f52 | commit | 9abfd5abeb34822c |
 | 2026-11-19 | Edited | Home page: quote under the top section | 478ca80e48c0 | commit | 2340fb80d3f0be09 |
+| 2026-11-19 | Edited | Home page quote: vomit face after the attribution | 61001dc2f154 | commit | f9c80aa94ca10ac9 |
