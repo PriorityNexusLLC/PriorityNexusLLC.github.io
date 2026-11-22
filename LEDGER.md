@@ -44,3 +44,4 @@ Append-only record of what was added, edited, corrected, reviewed, deleted or pu
 | 2026-11-21 | Edited | Home page quote: vomit face removed | ff405605656a | commit | 2263567b4856848e |
 | 2026-11-22 | Edited | Home page buttons: Check Company, Check PAC (new, opens the PAC movement page), Check Rule | 9459fd6b399c | commit | 5ab34c5347e4d958 |
 | 2026-11-22 | Edited | When a Limit Breaks: 93 more human conditions beside the 21 breaks, each with the shared word and its source | ec011e82b301 | commit | 919b7ec822ba191f |
+| 2026-11-22 | Edited | When a Limit Breaks: cannabis study removed; 11 more human conditions under Breaks apart, Is stopped from outside, Harm rises with the excess | c9a2d85fef67 | commit | a9d2301c2db55715 |
